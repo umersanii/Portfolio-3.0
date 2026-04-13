@@ -145,7 +145,7 @@ export interface SkillGroup {
   id: string;
   label: string;
   icon: string;
-  color: "primary" | "secondary" | "tertiary";
+  color: "primary" | "secondary" | "tertiary" | "neutral";
   skills: string[];
 }
 
@@ -175,7 +175,7 @@ export const skillGroups: SkillGroup[] = [
     id: "tools",
     label: "Tools & Infra",
     icon: "🛠",
-    color: "primary",
+    color: "neutral",
     skills: ["Git", "AWS IoT Core", "Vercel", "Docker (basics)", "Rust (learning)"],
   },
 ];
