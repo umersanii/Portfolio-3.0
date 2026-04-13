@@ -1,26 +1,333 @@
 @import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
+@custom-variant gold (&:is(.gold *));
 
+/* ─── MD3 Color Tokens — Light ─── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #1B6CA8;
+  --on-primary: #FFFFFF;
+  --primary-container: #D1E4FF;
+  --on-primary-container: #001D35;
+
+  --secondary: #525F70;
+  --on-secondary: #FFFFFF;
+  --secondary-container: #D6E3F7;
+  --on-secondary-container: #0E1D2A;
+
+  --tertiary: #6B5778;
+  --on-tertiary: #FFFFFF;
+  --tertiary-container: #F2DAFF;
+  --on-tertiary-container: #251431;
+
+  --error: #BA1A1A;
+  --error-container: #FFDAD6;
+
+  --background: #F8F9FF;
+  --on-background: #191C20;
+  --surface: #F8F9FF;
+  --on-surface: #191C20;
+  --surface-variant: #DFE2EB;
+  --on-surface-variant: #43474E;
+
+  --surface-container-lowest: #FFFFFF;
+  --surface-container-low: #F2F3FB;
+  --surface-container: #ECEDF4;
+  --surface-container-high: #E6E8EF;
+  --surface-container-highest: #E1E2E9;
+
+  --outline: #73777F;
+  --outline-variant: #C3C7CF;
+
+  --inverse-surface: #2E3036;
+  --inverse-on-surface: #F0F0F7;
+  --inverse-primary: #9ECAFF;
+
+  --scrim: rgba(0, 0, 0, 0.32);
 }
 
+/* ─── MD3 Color Tokens — Dark ─── */
+.dark {
+  --primary: #9ECAFF;
+  --on-primary: #003258;
+  --primary-container: #00497D;
+  --on-primary-container: #D1E4FF;
+
+  --secondary: #BAC8DB;
+  --on-secondary: #243140;
+  --secondary-container: #3B4858;
+  --on-secondary-container: #D6E3F7;
+
+  --tertiary: #D6BEE4;
+  --on-tertiary: #3B2948;
+  --tertiary-container: #523F5F;
+  --on-tertiary-container: #F2DAFF;
+
+  --error: #FFB4AB;
+  --error-container: #93000A;
+
+  --background: #111318;
+  --on-background: #E2E2E9;
+  --surface: #111318;
+  --on-surface: #E2E2E9;
+  --surface-variant: #43474E;
+  --on-surface-variant: #C3C7CF;
+
+  --surface-container-lowest: #0C0E13;
+  --surface-container-low: #191C20;
+  --surface-container: #1D2024;
+  --surface-container-high: #282A2F;
+  --surface-container-highest: #33353A;
+
+  --outline: #8D9199;
+  --outline-variant: #43474E;
+
+  --inverse-surface: #E2E2E9;
+  --inverse-on-surface: #2E3036;
+  --inverse-primary: #1B6CA8;
+
+  --scrim: rgba(0, 0, 0, 0.60);
+}
+
+/* ─── Noir Theme (black + gold) ─── */
+.noir {
+  --primary: #F4B942;
+  --on-primary: #1A0D00;
+  --primary-container: #3D2A00;
+  --on-primary-container: #FFD680;
+
+  --secondary: #CCAB60;
+  --on-secondary: #1E1200;
+  --secondary-container: #2E1E00;
+  --on-secondary-container: #F0CC88;
+
+  --tertiary: #9FC89A;
+  --on-tertiary: #0A2208;
+  --tertiary-container: #1E3B18;
+  --on-tertiary-container: #BAE5B4;
+
+  --error: #FFB4AB;
+  --error-container: #93000A;
+
+  --background: #080600;
+  --on-background: #F0E6CC;
+  --surface: #080600;
+  --on-surface: #F0E6CC;
+  --surface-variant: #362B18;
+  --on-surface-variant: #CFC09A;
+
+  --surface-container-lowest: #040300;
+  --surface-container-low: #0E0A04;
+  --surface-container: #130F06;
+  --surface-container-high: #1C160A;
+  --surface-container-highest: #252010;
+
+  --outline: #8A7A50;
+  --outline-variant: #362B18;
+
+  --inverse-surface: #F0E6CC;
+  --inverse-on-surface: #1A1408;
+  --inverse-primary: #7A5900;
+
+  --scrim: rgba(0, 0, 0, 0.85);
+}
+
+/* ─── Gold Theme (light) ─── */
+.gold {
+  --primary: #7A5900;
+  --on-primary: #FFFFFF;
+  --primary-container: #FFDEA2;
+  --on-primary-container: #271900;
+
+  --secondary: #6D5E3F;
+  --on-secondary: #FFFFFF;
+  --secondary-container: #F7E0B8;
+  --on-secondary-container: #261A04;
+
+  --tertiary: #4D6546;
+  --on-tertiary: #FFFFFF;
+  --tertiary-container: #CFECBD;
+  --on-tertiary-container: #0A1F07;
+
+  --error: #BA1A1A;
+  --error-container: #FFDAD6;
+
+  --background: #FFF8EF;
+  --on-background: #211B0E;
+  --surface: #FFF8EF;
+  --on-surface: #211B0E;
+  --surface-variant: #EDE0CF;
+  --on-surface-variant: #4F4539;
+
+  --surface-container-lowest: #FFFFFF;
+  --surface-container-low: #FFF2E2;
+  --surface-container: #F8EBDA;
+  --surface-container-high: #F2E5D4;
+  --surface-container-highest: #ECDECF;
+
+  --outline: #817467;
+  --outline-variant: #D4C4AE;
+
+  --inverse-surface: #372D1E;
+  --inverse-on-surface: #FAEEDD;
+  --inverse-primary: #F5BC48;
+
+  --scrim: rgba(0, 0, 0, 0.32);
+}
+
+/* ─── Gold Theme (dark) ─── */
+.gold.dark {
+  --primary: #F5BC48;
+  --on-primary: #3F2D00;
+  --primary-container: #594200;
+  --on-primary-container: #FFDEA2;
+
+  --secondary: #DAC29B;
+  --on-secondary: #3B2F11;
+  --secondary-container: #534524;
+  --on-secondary-container: #F7E0B8;
+
+  --tertiary: #B4CCA9;
+  --on-tertiary: #213620;
+  --tertiary-container: #384D36;
+  --on-tertiary-container: #CFECBD;
+
+  --error: #FFB4AB;
+  --error-container: #93000A;
+
+  --background: #1A1408;
+  --on-background: #EDE1CA;
+  --surface: #1A1408;
+  --on-surface: #EDE1CA;
+  --surface-variant: #4F4539;
+  --on-surface-variant: #D4C4AE;
+
+  --surface-container-lowest: #140F03;
+  --surface-container-low: #221A0E;
+  --surface-container: #261E11;
+  --surface-container-high: #302817;
+  --surface-container-highest: #3B3321;
+
+  --outline: #9E9076;
+  --outline-variant: #4F4539;
+
+  --inverse-surface: #EDE1CA;
+  --inverse-on-surface: #372D1E;
+  --inverse-primary: #7A5900;
+
+  --scrim: rgba(0, 0, 0, 0.60);
+}
+
+/* ─── Tailwind Theme Mapping ─── */
 @theme inline {
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
+  --color-primary-container: var(--primary-container);
+  --color-on-primary-container: var(--on-primary-container);
+
+  --color-secondary: var(--secondary);
+  --color-on-secondary: var(--on-secondary);
+  --color-secondary-container: var(--secondary-container);
+  --color-on-secondary-container: var(--on-secondary-container);
+
+  --color-tertiary: var(--tertiary);
+  --color-on-tertiary: var(--on-tertiary);
+  --color-tertiary-container: var(--tertiary-container);
+  --color-on-tertiary-container: var(--on-tertiary-container);
+
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-on-background: var(--on-background);
+  --color-surface: var(--surface);
+  --color-on-surface: var(--on-surface);
+  --color-surface-variant: var(--surface-variant);
+  --color-on-surface-variant: var(--on-surface-variant);
+
+  --color-surface-lowest: var(--surface-container-lowest);
+  --color-surface-low: var(--surface-container-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-high: var(--surface-container-high);
+  --color-surface-highest: var(--surface-container-highest);
+
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+
+  --color-inverse-surface: var(--inverse-surface);
+  --color-inverse-on-surface: var(--inverse-on-surface);
+  --color-inverse-primary: var(--inverse-primary);
+
+  /* MD3 uses larger border radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
+  --radius-full: 9999px;
+
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Base ─── */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  color: var(--on-background);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+::selection {
+  background-color: var(--primary-container);
+  color: var(--on-primary-container);
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--surface-container-low); }
+::-webkit-scrollbar-thumb {
+  background: var(--outline-variant);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--outline); }
+
+/* ─── MD3 Elevation (tonal surface + shadow) ─── */
+.elev-1 {
+  background-color: color-mix(in srgb, var(--primary) 5%, var(--surface));
+  box-shadow: 0 1px 2px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.06);
+}
+.elev-2 {
+  background-color: color-mix(in srgb, var(--primary) 8%, var(--surface));
+  box-shadow: 0 1px 2px rgba(0,0,0,.14), 0 2px 6px rgba(0,0,0,.09);
+}
+.elev-3 {
+  background-color: color-mix(in srgb, var(--primary) 11%, var(--surface));
+  box-shadow: 0 4px 8px rgba(0,0,0,.14), 0 1px 3px rgba(0,0,0,.09);
+}
+.elev-4 {
+  background-color: color-mix(in srgb, var(--primary) 12%, var(--surface));
+  box-shadow: 0 6px 10px rgba(0,0,0,.14), 0 1px 18px rgba(0,0,0,.08);
+}
+
+/* ─── Ripple effect ─── */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+.ripple::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  opacity: 0;
+  border-radius: inherit;
+  transition: opacity 200ms;
+}
+.ripple:hover::after { opacity: 0.08; }
+.ripple:active::after { opacity: 0.12; }
